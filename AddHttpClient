@@ -1,0 +1,4 @@
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+	client.BaseAddress = new Uri("https://localhost:44347/");
+});

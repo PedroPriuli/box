@@ -1,0 +1,18 @@
+
+		private readonly ILogger<HomeController> _logger;
+		private readonly HttpClient _httpClient;
+
+		public HomeController(ILogger<HomeController> logger, IHttpClientFactory httpFactory)
+		{
+			_logger = logger;
+			_httpClient = httpFactory.CreateClient("ApiFrota");
+		}
+
+		public async Task<IActionResult> Index()
+		{
+			var response = await _httpClient.GetFromJsonAsync<List<DtoVeiculo>>("api/Veiculo");
+			if(response == null) {	
+					return View(new List<DtoVeiculo>());
+			}
+			return View(response);
+		}

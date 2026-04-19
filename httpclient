@@ -10,6 +10,7 @@
 
 		public async Task<IActionResult> Index()
 		{
+			//atencao await
 			var response = await _httpClient.GetFromJsonAsync<List<DtoVeiculo>>("api/Veiculo");
 			if(response == null) {	
 					return View(new List<DtoVeiculo>());

@@ -1,1 +1,9 @@
 empresa.library.infrastructure
+
+
+Isso faz sentido porque:
+Você está separando por responsabilidade
+api → comunicação, endpoints, backend/serviços
+ui → interface do usuário
+Está tudo dentro de um contexto único da aplicação (nomedaempresa.app)
+É legível e escalável o suficiente para projetos pequenos e médios

@@ -1,0 +1,10 @@
+		[HttpGet]
+		public async Task<IActionResult> Delete(int id)
+		{
+			var result = await _httpClient.DeleteAsync($"api/Veiculo?id={id}");
+			if(result.StatusCode == System.Net.HttpStatusCode.OK)
+			{
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Error");
+		}

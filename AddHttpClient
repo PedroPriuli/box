@@ -1,4 +1,4 @@
-builder.Services.AddHttpClient("ApiClient", client =>
+builder.Services.AddHttpClient("ApiFrota", client =>
 {
 	client.BaseAddress = new Uri("https://localhost:44347/");
 });

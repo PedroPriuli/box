@@ -1,0 +1,27 @@
+    [HttpGet]
+		public async Task<IActionResult> Delete(int id)
+		{
+			var result = await _httpClient.DeleteAsync($"api/Veiculo?id={id}");
+			if(result.StatusCode == System.Net.HttpStatusCode.OK)
+			{
+				return RedirectToAction("Index");
+			}
+			return RedirectToAction("Error");
+		}
+
+		[HttpGet]
+		public async Task<IActionResult> Create()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Create(DtoMotorista entity)
+		{
+			var result = await _httpClient.PostAsJsonAsync($"api/Veiculo", entity);
+			if (result.StatusCode == System.Net.HttpStatusCode.OK)
+			{
+				return RedirectToAction("Index");
+			}
+			return View();
+		}

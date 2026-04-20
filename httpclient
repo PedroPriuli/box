@@ -5,7 +5,7 @@
 		public HomeController(ILogger<HomeController> logger, IHttpClientFactory httpFactory)
 		{
 			_logger = logger;
-			_httpClient = httpFactory.CreateClient("ApiFrota");
+			_httpClient = httpFactory.CreateClient("ApiNome");
 		}
 
 		public async Task<IActionResult> Index()
